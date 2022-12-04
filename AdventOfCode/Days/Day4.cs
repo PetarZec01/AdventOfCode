@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-
-namespace Day4
+namespace AdventOfCode.Days
 {
-    internal class Program
+    public class Day4 : IDays
     {
-        public static LinkedList<string> ReadFile()
+        public LinkedList<string> ReadFile()
         {
             LinkedList<string> lines = new LinkedList<string>();
-            string textFile = "C:\\Users\\petar\\Desktop\\advent of code\\AdventOfCode\\Day4\\Day4\\advent_of_code4.txt";
+            //ENTER YOUR FILE PATH
+            string textFile = "C:\\Users\\petar\\Desktop\\advent of code\\AdventOfCode\\inputs\\Day4.txt";
             using (StreamReader file = new StreamReader(textFile))
             {
                 string ln;
@@ -27,7 +26,7 @@ namespace Day4
             return lines;
         }
 
-        public static int[] numberRecognition(string line)
+        public int[] numberRecognition(string line)
         {
             int[] numbers = new int[4];
             string temp = "";
@@ -35,13 +34,13 @@ namespace Day4
             int counter = 0;
             for (int i = 0; i < line.Length; i++)
             {
-                if(line[i] >= '0' && line[i] <= '9')
+                if (line[i] >= '0' && line[i] <= '9')
                 {
-                    temp+=line[i];
+                    temp += line[i];
                 }
                 else
                 {
-                    
+
                     if (Int32.TryParse(temp, out number))
                     {
                         numbers[counter] = number;
@@ -58,23 +57,20 @@ namespace Day4
             return numbers;
         }
 
-        static void Main(string[] args)
+        public void Solution()
         {
             LinkedList<string> lines = ReadFile();
             int contains = 0;
             foreach (var line in lines)
             {
                 int[] numbers = numberRecognition(line);
-                
+
                 if (numbers[0] >= numbers[2] && numbers[1] <= numbers[3])
                     contains++;
                 else if (numbers[2] >= numbers[0] && numbers[3] <= numbers[1])
                     contains++;
             }
-
-
             Console.WriteLine(contains);
-            Console.ReadLine();
         }
     }
 }
