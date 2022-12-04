@@ -8,23 +8,7 @@ namespace AdventOfCode.Days
 {
     public class Day4 : IDays
     {
-        public LinkedList<string> ReadFile()
-        {
-            LinkedList<string> lines = new LinkedList<string>();
-            //ENTER YOUR FILE PATH
-            string textFile = "C:\\Users\\petar\\Desktop\\advent of code\\AdventOfCode\\inputs\\Day4.txt";
-            using (StreamReader file = new StreamReader(textFile))
-            {
-                string ln;
-
-                while ((ln = file.ReadLine()) != null)
-                {
-                    lines.AddLast(ln);
-                }
-                file.Close();
-            }
-            return lines;
-        }
+        FileReader reader = new FileReader();
 
         public int[] numberRecognition(string line)
         {
@@ -59,7 +43,8 @@ namespace AdventOfCode.Days
 
         public void Solution()
         {
-            LinkedList<string> lines = ReadFile();
+            Console.WriteLine("Day 4:");
+            LinkedList<string> lines = FileReader.ReadFile("C:\\Users\\petar\\Desktop\\advent of code\\AdventOfCode\\inputs\\Day4.txt");
             int contains = 0;
             foreach (var line in lines)
             {
