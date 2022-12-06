@@ -8,6 +8,7 @@ namespace AdventOfCode
         {
             Day1 day1 = new Day1(); day1.Solution();
             Day2 day2 = new Day2(); day2.Solution();
+            Day3 day3 = new Day3(); day3.Solution();
             Day4 day4 = new Day4(); day4.Solution();
         }
     }
