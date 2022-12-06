@@ -46,6 +46,7 @@ namespace AdventOfCode.Days
             Console.WriteLine("Day 4:");
             LinkedList<string> lines = FileReader.ReadFile("C:\\Users\\petar\\Desktop\\advent of code\\AdventOfCode\\inputs\\Day4.txt");
             int contains = 0;
+            int contains2 = 0;
             foreach (var line in lines)
             {
                 int[] numbers = numberRecognition(line);
@@ -54,8 +55,18 @@ namespace AdventOfCode.Days
                     contains++;
                 else if (numbers[2] >= numbers[0] && numbers[3] <= numbers[1])
                     contains++;
+
+                if (numbers[1] >= numbers[2] && numbers[1] <= numbers[3])
+                    contains2++;
+                else if (numbers[0] >= numbers[2] && numbers[0] <= numbers[3])
+                    contains2++;
+                else if (numbers[2] >= numbers[0] && numbers[2] <= numbers[1])
+                    contains2++;
+                else if (numbers[3] >= numbers[0] && numbers[3] <= numbers[1])
+                    contains2++;
             }
             Console.WriteLine(contains);
+            Console.WriteLine(contains2);
         }
     }
 }
