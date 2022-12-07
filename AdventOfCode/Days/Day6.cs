@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AdventOfCode.Days
 {
    
-    public class Day6
+    public class Day6 : IDays
     {
         public int findMarker(string subroutine) 
         {

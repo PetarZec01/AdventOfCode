@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Days
 {
-    public class Day5
+    public class Day5 : IDays
     {
 
         LinkedList<char>[] toStacks(LinkedList<string> stacksString, int size = 9)
