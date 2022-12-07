@@ -37,8 +37,6 @@ namespace AdventOfCode.Days
 
     public class Day7 : IDays
     {
-        public LinkedList<string[]> commandLine;
-
         public Directory setupTree(LinkedList<string> list)
         {
             LinkedList<string[]> listSplit = new();
